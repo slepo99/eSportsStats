@@ -1,3 +1,3 @@
 export enum Api {
-    GET_TEAMS = '/teams',
+  GET_TEAMS = '/teams',
 }

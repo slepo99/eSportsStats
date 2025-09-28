@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
@@ -8,24 +8,24 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "@pinia/nuxt",
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/i18n",
-    "@nuxt/eslint",
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
+    '@nuxt/eslint',
   ],
   i18n: {
     locales: [
-      { code: "en", name: "English", file: "en.json" },
-      { code: "uk", name: "Українська", file: "uk.json" },
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'uk', name: 'Українська', file: 'uk.json' },
     ],
-    defaultLocale: "en",
-    langDir: "locales/",
-    strategy: "prefix_except_default",
+    defaultLocale: 'en',
+    langDir: 'locales/',
+    strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: "i18n_redirected",
+      cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
-      fallbackLocale: "en",
+      fallbackLocale: 'en',
     },
   },
 });

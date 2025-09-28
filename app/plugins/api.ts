@@ -4,12 +4,12 @@ export default defineNuxtPlugin((nuxtApp) => {
   const api = $fetch.create({
     baseURL: config.public.apiBase,
     timeout: 15000,
-     onRequest({ request }) {
-       if (import.meta.client) {
-        checkLimit()
-        incrementCounter()
+    onRequest({ request }) {
+      if (import.meta.client) {
+        checkLimit();
+        incrementCounter();
       }
-    }
+    },
   });
-  nuxtApp.provide("api", api);
+  nuxtApp.provide('api', api);
 });

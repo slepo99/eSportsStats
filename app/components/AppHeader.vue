@@ -4,7 +4,7 @@
   >
     <NuxtLink to="/">
       <span class="text-xl duration-300 transition hover:text-yellow-300"
-        >{{ `<${$t("projectName")} />` }}
+        >{{ `<${$t('projectName')} />` }}
       </span>
     </NuxtLink>
   </div>
