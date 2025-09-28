@@ -7,12 +7,7 @@ export default defineNuxtConfig({
       apiBase: process.env.API_BASE_URL,
     },
   },
-  modules: [
-    '@pinia/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/i18n',
-    '@nuxt/eslint',
-  ],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxt/icon'],
   i18n: {
     locales: [
       { code: 'en', name: 'English', file: 'en.json' },
@@ -26,6 +21,16 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
       fallbackLocale: 'en',
+    },
+  },
+  css: ['~/assets/css/main.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/css/_variables.scss" as *;',
+        },
+      },
     },
   },
 });

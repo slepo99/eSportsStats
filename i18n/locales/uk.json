@@ -1,3 +1,14 @@
 {
-  "projectName": "OpenDota"
+  "projectName": "DotaStats",
+  "mainHeader": {
+    "links": {
+      "matches": "Матчі",
+      "heroes": "Герої",
+      "players": "Гравці",
+      "teams": "Команди"
+    },
+    "search": {
+      "placeholder": "Пошук по id"
+    }
+  }
 }
