@@ -21,7 +21,8 @@
         </div>
       </div>
       <div class="flex items-center">
-        <SearchBar @searchData="searchData" />
+        <HeaderSearchBar @searchData="searchData" />
+        <HeaderSettings />
       </div>
     </div>
   </header>

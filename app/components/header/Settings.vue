@@ -1,0 +1,29 @@
+<template>
+  <div class="relative">
+    <Icon name="mdi:settings" />
+    <div class="burger-menu">
+      <div class="hover:text-yellow-300 cursor-pointer">Profile</div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped>
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    position: absolute;
+    padding: 6px;
+    top: 100%;
+    right: 0;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.375rem;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+</style>
