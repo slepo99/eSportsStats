@@ -14,10 +14,24 @@
     <div
       ref="menuRef"
       v-show="isOpen"
-      class="burger-menu"
+      class="burger-menu flex-col absolute p-2"
     >
       <div class="hover:text-yellow-300 cursor-pointer">Profile</div>
-      <div class="hover:text-yellow-300 cursor-pointer">Language</div>
+      <div
+        class="hover:text-yellow-300 cursor-pointer flex justify-between items-center"
+      >
+        <span>Language</span>
+        <Icon name="mdi:chevron-down" />
+   
+          <NuxtLink
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
+          >
+            {{ locale.name }}
+          </NuxtLink>
+ 
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +42,9 @@
   const isOpen = ref(false);
   const menuRef = ref<HTMLElement | null>(null);
   const buttonRef = ref<HTMLElement | null>(null);
+  const { availableLocales } = useHeader();
+
+  const switchLocalePath = useSwitchLocalePath();
   useClickOutside(
     menuRef,
     () => {
@@ -39,10 +56,7 @@
 
 <style scoped>
   .burger-menu {
-    flex-direction: column;
-    min-width: 200px;
-    position: absolute;
-    padding: 6px;
+    min-width: 120px;
     top: 50px;
     right: 0;
     background-color: #1f2937;

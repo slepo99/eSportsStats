@@ -2,7 +2,7 @@ interface ITeams {
   team_id: number;
   name: string;
 }
-export function useApi() {
+export function useApiCalls() {
   const { $api } = useNuxtApp();
 
   async function getTeams() {

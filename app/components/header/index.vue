@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-  const { routes } = useMain();
+  const { routes } = useHeader();
 
   function searchData(query: string) {
     console.log('Search query:', query);
