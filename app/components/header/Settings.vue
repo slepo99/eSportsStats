@@ -1,22 +1,49 @@
 <template>
   <div class="relative">
-    <Icon name="mdi:settings" />
-    <div class="burger-menu">
+    <CustomBtn
+      @click.stop="isOpen = !isOpen"
+      ref="buttonRef"
+    >
+      <template v-slot:icon>
+        <Icon
+          name="mdi:settings"
+          size="24px"
+        />
+      </template>
+    </CustomBtn>
+    <div
+      ref="menuRef"
+      v-show="isOpen"
+      class="burger-menu"
+    >
       <div class="hover:text-yellow-300 cursor-pointer">Profile</div>
+      <div class="hover:text-yellow-300 cursor-pointer">Language</div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const { useClickOutside } = useCustomHelpers();
+
+  const isOpen = ref(false);
+  const menuRef = ref<HTMLElement | null>(null);
+  const buttonRef = ref<HTMLElement | null>(null);
+  useClickOutside(
+    menuRef,
+    () => {
+      isOpen.value = false;
+    },
+    buttonRef,
+  );
+</script>
 
 <style scoped>
   .burger-menu {
-    display: flex;
     flex-direction: column;
     min-width: 200px;
     position: absolute;
     padding: 6px;
-    top: 100%;
+    top: 50px;
     right: 0;
     background-color: #1f2937;
     border: 1px solid #374151;

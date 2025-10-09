@@ -22,7 +22,7 @@
       </div>
       <div class="flex items-center">
         <HeaderSearchBar @searchData="searchData" />
-        <HeaderSettings />
+        <HeaderSettings class="ml-4" />
       </div>
     </div>
   </header>

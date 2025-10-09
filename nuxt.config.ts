@@ -33,4 +33,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  imports: {
+    dirs: [
+      'composables',
+      'composables/**',
+      // 'composables/*/index.{ts,js,mjs,mts}'
+    ],
+  },
 });
