@@ -1,5 +1,8 @@
 <template>
-  <button :class="props.title?.length ? `btn` : `btn-icon`" class="flex items-center bg-transparent">
+  <button
+    :class="props.title?.length ? `btn` : `btn-icon`"
+    class="flex items-center bg-transparent"
+  >
     <span v-if="props.title?.length">{{ props.title }}</span>
     <slot name="icon"></slot>
   </button>

@@ -22,15 +22,14 @@
       >
         <span>Language</span>
         <Icon name="mdi:chevron-down" />
-   
-          <NuxtLink
-            v-for="locale in availableLocales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-          >
-            {{ locale.name }}
-          </NuxtLink>
- 
+
+        <NuxtLink
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)"
+        >
+          {{ locale.name }}
+        </NuxtLink>
       </div>
     </div>
   </div>
