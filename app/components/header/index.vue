@@ -4,7 +4,7 @@
   >
     <div class="container mx-auto w-full flex items-center justify-between">
       <div class="flex items-center">
-        <NuxtLink to="/">
+        <NuxtLink :to="localePath('/')">
           <span class="text-xl hover:text-yellow-300">
             {{ `<${$t('projectName')} />` }}
           </span>
@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
   const { routes } = useHeader();
-
+const localePath = useLocalePath();
   function searchData(query: string) {
     console.log('Search query:', query);
   }

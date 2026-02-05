@@ -17,20 +17,27 @@
       class="burger-menu flex-col absolute p-2"
     >
       <div class="hover:text-yellow-300 cursor-pointer">Profile</div>
-      <div
-        class="hover:text-yellow-300 cursor-pointer flex justify-between items-center"
-      >
-        <span>Language</span>
-        <Icon name="mdi:chevron-down" />
-
-        <NuxtLink
-          v-for="locale in availableLocales"
-          :key="locale.code"
-          :to="switchLocalePath(locale.code)"
-        >
-          {{ locale.name }}
-        </NuxtLink>
-      </div>
+      <CustomDropDown>
+        <template #title="{ open }">
+          <div class="hover:text-yellow-300 cursor-pointer flex items-center">
+            <span>Language</span>
+            <Icon :name="open ? 'mdi:chevron-up' : 'mdi:chevron-down'" />
+          </div>
+        </template>
+        <template #option="{ close }">
+          <div class="ml-2 ">
+            <NuxtLink
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              :to="switchLocalePath(locale.code)"
+              @click="closeDropdown(close)"
+              class="flex-col flex"
+            >
+              <span class="hover:text-yellow-300">{{ locale.name }}</span>
+            </NuxtLink>
+          </div>
+        </template>
+      </CustomDropDown>
     </div>
   </div>
 </template>
@@ -51,6 +58,10 @@
     },
     buttonRef,
   );
+  function closeDropdown(close: () => void) {
+    console.log('close');
+    close();
+  }
 </script>
 
 <style scoped>
@@ -65,5 +76,8 @@
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
       0 4px 6px -2px rgba(0, 0, 0, 0.05);
     z-index: 1000;
+    max-height: 600px;
+    transition: height 300ms ease;
+    overflow: hidden;
   }
 </style>
