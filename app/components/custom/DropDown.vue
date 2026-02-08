@@ -1,9 +1,8 @@
 <template>
   <div
     ref="root"
-    class="relative "
-    :style="{ height: (height + 24) + 'px' }"
-   
+    class="relative"
+    :style="{ height: height + 24 + 'px' }"
   >
     <div @click.stop="toggle">
       <slot

@@ -1,16 +1,13 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-gray-900 text-white">
-    <NuxtLayout>
-      <Header />
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
 <script setup lang="ts">
-  // const { loadTeams, getTeams } = useApi()
-
-  // const {data, refresh } = await loadTeams()
-
-  // console.log('useFetch', data.value)
-  // const data = await getTeams()
+  const { loadTeams } = useTeamsFetch();
+  const { data: teams, pending, error, refresh } = loadTeams();
+  console.log(
+    teams.value?.find((team) => team.name.toLowerCase().includes('natus')),
+  );
 </script>

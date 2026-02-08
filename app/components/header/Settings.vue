@@ -25,7 +25,7 @@
           </div>
         </template>
         <template #option="{ close }">
-          <div class="ml-2 ">
+          <div class="ml-2">
             <NuxtLink
               v-for="locale in availableLocales"
               :key="locale.code"

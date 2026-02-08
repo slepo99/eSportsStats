@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
   const { routes } = useHeader();
-const localePath = useLocalePath();
+  const localePath = useLocalePath();
   function searchData(query: string) {
     console.log('Search query:', query);
   }

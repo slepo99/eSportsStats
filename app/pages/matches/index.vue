@@ -1,9 +1,9 @@
 <template>
-  <div class="container mx-auto w-full">
+  <div>
     <CustomDropDown>
       <template #title>huuu</template>
       <template #option="{ close }">
-        <div v-for="value in [1,2,3,4,5]">
+        <div v-for="value in [1, 2, 3, 4, 5]">
           <div @click="closeDropdown(close)">{{ value }}</div>
         </div>
       </template>

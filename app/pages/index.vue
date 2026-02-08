@@ -14,6 +14,5 @@
     background-repeat: no-repeat;
     height: 50vh;
     min-height: 700px;
-    width: 100vw;
   }
 </style>
